@@ -1,0 +1,30 @@
+# Uncomment the next line to define a global platform for your project
+ platform :ios, '9.0'
+ source 'https://github.com/CocoaPods/Specs.git'
+ source 'https://github.com/brightcove/BrightcoveSpecs.git'
+
+target 'SpotXIntegration' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for SpotXIntegration
+  pod 'SpotX-SDK'
+  pod 'SpotX-SDK-MOAT'
+
+  pod 'mopub-ios-sdk'
+  pod 'SpotX-MoPub-Plugin'
+
+  pod 'Brightcove-Player-Core/dynamic'
+  pod 'SpotX-Brightcove-Plugin'
+
+  target 'SpotXIntegrationTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'SpotXIntegrationUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
