@@ -1,0 +1,6 @@
+framework module SpotX_MoPub_Plugin {
+  umbrella header "SpotX-MoPub-Plugin-umbrella.h"
+
+  export *
+  module * { export * }
+}

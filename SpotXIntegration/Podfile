@@ -8,7 +8,7 @@ target 'SpotXIntegration' do
   use_frameworks!
 
   # Pods for SpotXIntegration
-  pod 'SpotX-SDK'
+  pod "SpotX-SDK", "~> 4.0.3"
   pod 'SpotX-SDK-MOAT'
 
   pod 'mopub-ios-sdk'

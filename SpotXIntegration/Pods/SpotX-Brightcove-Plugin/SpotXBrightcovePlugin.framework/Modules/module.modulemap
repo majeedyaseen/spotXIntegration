@@ -1,0 +1,6 @@
+framework module SpotXBrightcovePlugin {
+  umbrella header "SpotXBrightcovePlugin.h"
+
+  export *
+  module * { export * }
+}

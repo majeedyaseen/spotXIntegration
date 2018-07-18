@@ -199,8 +199,6 @@
 				13E653C620EB5BD4001EC5CF /* Sources */,
 				13E653C720EB5BD4001EC5CF /* Frameworks */,
 				13E653C820EB5BD4001EC5CF /* Resources */,
-				39CAD7C404F17E659221F30C /* [CP] Embed Pods Frameworks */,
-				AAF5B76D941947B978EFAFEE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -220,8 +218,6 @@
 				13E653D120EB5BD4001EC5CF /* Sources */,
 				13E653D220EB5BD4001EC5CF /* Frameworks */,
 				13E653D320EB5BD4001EC5CF /* Resources */,
-				7FFD5F73EE5039AE166C2665 /* [CP] Embed Pods Frameworks */,
-				586F43B8CE9B313FF1FE5E37 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -307,36 +303,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		39CAD7C404F17E659221F30C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SpotXIntegrationTests/Pods-SpotXIntegrationTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		586F43B8CE9B313FF1FE5E37 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SpotXIntegrationUITests/Pods-SpotXIntegrationUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		5984F6DE209B5808B563609B /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -348,7 +314,7 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BCOVPUIResources.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -389,36 +355,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7FFD5F73EE5039AE166C2665 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SpotXIntegrationUITests/Pods-SpotXIntegrationUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AAF5B76D941947B978EFAFEE /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SpotXIntegrationTests/Pods-SpotXIntegrationTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B5AD467316D35534080EE3E5 /* [CP] Embed Pods Frameworks */ = {
@@ -634,6 +570,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EX4A386PXY;
 				INFOPLIST_FILE = SpotXIntegration/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.SpotXIntegration;
@@ -649,6 +586,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EX4A386PXY;
 				INFOPLIST_FILE = SpotXIntegration/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.SpotXIntegration;

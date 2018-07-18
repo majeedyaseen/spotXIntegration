@@ -11,20 +11,41 @@ import SpotX
 
 class ViewController: UIViewController {
     
+    var _spotxInterstital: SpotXInterstitialAdPlayer?
+    var _spotxResizable: SpotXResizableAdPlayer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    @IBOutlet weak var addView: UIView!
     @IBAction func adClicked(_ sender:UIButton){
-        self.playInterstialAd()
+     self.playInterstialAd()
+       // self.playInlineAd()
     }
+    
+    @IBAction func inlineClicked(_ sender: Any) {
+         self.playInlineAd()
+    }
+    
     func playInterstialAd()  {
-        let spotxInterstital = SpotXInterstitialAdPlayer.init()
-        spotxInterstital.delegate = self
-        SpotX.debugMode(true)
-        spotxInterstital.load()
+//        let spotxInterstital = SpotXInterstitialAdPlayer.init()
+//        spotxInterstital.delegate = self
+//        SpotX.debugMode(true)
+//        spotxInterstital.load()
+        _spotxInterstital = SpotXInterstitialAdPlayer()
+        _spotxInterstital!.delegate = self
+        _spotxInterstital!.load()
+
         
+    }
+    
+    func playInlineAd(){
+        _spotxResizable = SpotXResizableAdPlayer.init(in: addView)
+        _spotxResizable!.delegate = self
+        _spotxResizable!.load()
+
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -39,8 +60,9 @@ extension ViewController: SpotXAdPlayerDelegate {
         
         // if NOT using an apikey
         let request: SpotXAdRequest = SpotXAdRequest.init(apiKey: "apikey-1234")!
-        
+      //  request.setParam(<#T##key: String##String#>, value: <#T##String?#>)
         // This SpotX channel id can be used for testing
+        //let setting:
         request.setChannel("85394")
         
         return request
@@ -49,10 +71,12 @@ extension ViewController: SpotXAdPlayerDelegate {
     // Play the ad(s) if they were returned
     public func spotx(_ player: SpotXAdPlayer, didLoadAds group: SpotXAdGroup?, error: Error?) {
         if (group != nil && group!.ads.count > 0) {
+            print("add received")
             player.start()
         }
         else {
             //            self.showMessage(message: "No Ads Available")
+            print("add not received")
         }
     }
     
@@ -94,6 +118,7 @@ extension ViewController: SpotXAdPlayerDelegate {
     // Called when the ad(s) have completed playback and have been closed
     public func spotx(_ player: SpotXAdPlayer, adGroupComplete group: SpotXAdGroup) {
         print("SDK:Interstitial:adGroupComplete")
+        self.dismiss(animated: true, completion: nil)
     }
 }
 
